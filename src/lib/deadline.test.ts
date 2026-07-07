@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import {
   DEADLINE,
+  WINDOW_START,
   remainingUntil,
   formatRemaining,
   formatDeadlineIn,
   totalHoursLeft,
+  percentElapsed,
 } from './deadline'
 
 describe('remainingUntil', () => {
@@ -47,6 +49,18 @@ describe('totalHoursLeft', () => {
 
   it('clamps at zero after the deadline', () => {
     expect(totalHoursLeft(DEADLINE, new Date(DEADLINE.getTime() + 1000))).toBe('0.0')
+  })
+})
+
+describe('percentElapsed', () => {
+  it('is 50 at the midpoint of the window', () => {
+    const mid = new Date((WINDOW_START.getTime() + DEADLINE.getTime()) / 2)
+    expect(percentElapsed(WINDOW_START, DEADLINE, mid)).toBeCloseTo(50, 5)
+  })
+
+  it('clamps to 0 before the window and 100 after', () => {
+    expect(percentElapsed(WINDOW_START, DEADLINE, new Date(WINDOW_START.getTime() - 1000))).toBe(0)
+    expect(percentElapsed(WINDOW_START, DEADLINE, new Date(DEADLINE.getTime() + 1000))).toBe(100)
   })
 })
 

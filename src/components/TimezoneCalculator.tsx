@@ -7,7 +7,7 @@ export default function TimezoneCalculator() {
   const [zone, setZone] = useState(detected)
 
   return (
-    <section className="card card-centered">
+    <section className="card card-centered card-primary">
       <h2>When does it end for you?</h2>
       <p className="tz-result">
         In <strong>{zone.replace(/_/g, ' ')}</strong>, Fable 5 stops being included at
@@ -16,13 +16,15 @@ export default function TimezoneCalculator() {
       </p>
       <label className="tz-label">
         Check another timezone
-        <select value={zone} onChange={(e) => setZone(e.target.value)}>
-          {zones.map((z) => (
-            <option key={z} value={z}>
-              {z.replace(/_/g, ' ')}
-            </option>
-          ))}
-        </select>
+        <span className="select-wrap">
+          <select value={zone} onChange={(e) => setZone(e.target.value)}>
+            {zones.map((z) => (
+              <option key={z} value={z}>
+                {z.replace(/_/g, ' ')}
+              </option>
+            ))}
+          </select>
+        </span>
       </label>
       {zone !== detected && (
         <button className="tz-reset" onClick={() => setZone(detected)}>

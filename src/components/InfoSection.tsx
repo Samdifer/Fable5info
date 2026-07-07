@@ -1,18 +1,21 @@
 export default function InfoSection() {
   return (
-    <section className="card">
+    <section className="card card-info">
       <h2>What&rsquo;s happening?</h2>
       <p>
-        Claude Fable 5 — Anthropic&rsquo;s first Mythos-class model — has been included in Pro,
-        Max, Team, and select Enterprise plans at up to 50% of weekly usage limits since it
-        returned on July 1. That included access was set to end July 7, but on deadline day
-        Anthropic extended it by five days, to <strong>July 12, 2026</strong>.
+        Fable 5 has been included in paid Claude plans at up to 50% of weekly usage limits
+        since July 1. The cutoff was set for July 7 — then extended on deadline day.
       </p>
-      <p>
-        After the cutoff, Fable 5 doesn&rsquo;t disappear — it moves to metered usage credits at
-        $10 / $50 per million input / output tokens. Anthropic says it will return to
-        subscription plans once capacity allows.
-      </p>
+      <dl className="facts">
+        <dt>Included until</dt>
+        <dd>July 12, 2026 · 11:59:59 PM PT</dd>
+        <dt>What changes</dt>
+        <dd>Moves from plan-included to metered usage credits</dd>
+        <dt>Price after</dt>
+        <dd>$10 / $50 per million input / output tokens</dd>
+        <dt>Coming back?</dt>
+        <dd>Anthropic says yes, once capacity allows</dd>
+      </dl>
       <ul className="sources">
         <li>
           <a

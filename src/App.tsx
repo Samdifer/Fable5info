@@ -22,14 +22,17 @@ export default function App() {
 
   return (
     <main>
-      <button
-        className="theme-toggle"
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-        aria-label="Toggle theme"
-      >
-        ◐
-      </button>
+      <header className="site-header">
+        <span className="wordmark">fable5.info</span>
+        <button
+          className="theme-toggle"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+          aria-label="Toggle theme"
+        >
+          ◐
+        </button>
+      </header>
       <Countdown />
       <QuoteRotator />
       <TimezoneCalculator />

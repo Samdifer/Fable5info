@@ -2,6 +2,15 @@
 // anchored to Pacific Time in San Francisco, Anthropic's home timezone.
 export const DEADLINE = new Date('2026-07-13T06:59:59Z')
 
+// July 1, 2026 12:00 AM Pacific — when included access returned to paid plans.
+export const WINDOW_START = new Date('2026-07-01T07:00:00Z')
+
+export function percentElapsed(start: Date, end: Date, now: Date): number {
+  const total = end.getTime() - start.getTime()
+  const elapsed = now.getTime() - start.getTime()
+  return Math.min(100, Math.max(0, (elapsed / total) * 100))
+}
+
 export interface Remaining {
   days: number
   hours: number
