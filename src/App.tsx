@@ -38,11 +38,21 @@ export default function App() {
       <TimezoneCalculator />
       <InfoSection />
       <footer>
-        Not affiliated with Anthropic. Web port of a{' '}
-        <a href="https://github.com/Samdifer/Fable5info" target="_blank" rel="noreferrer">
-          desktop sticky-note app
-        </a>
-        .
+        <p>
+          Not affiliated with Anthropic. Web port of a{' '}
+          <a href="https://github.com/Samdifer/Fable5info" target="_blank" rel="noreferrer">
+            desktop sticky-note app
+          </a>
+          .
+        </p>
+        <p>
+          This website is brought to you by AVLY AI, building the future of aviation software
+          at{' '}
+          <a href="https://avly.io" target="_blank" rel="noreferrer">
+            AVLY.io
+          </a>
+          .
+        </p>
       </footer>
     </main>
   )
