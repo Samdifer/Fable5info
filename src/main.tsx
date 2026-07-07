@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+document.documentElement.dataset.theme =
+  localStorage.getItem('fable5-theme') === 'light' ? 'light' : 'dark'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
