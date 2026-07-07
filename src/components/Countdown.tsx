@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { DEADLINE, formatRemaining, remainingUntil } from '../lib/deadline'
+import { DEADLINE, formatRemaining, remainingUntil, totalHoursLeft } from '../lib/deadline'
 
 function useNow(): Date {
   const [now, setNow] = useState(() => new Date())
@@ -25,6 +25,11 @@ export default function Countdown() {
           ? 'Fable 5 has left your Claude plan'
           : 'until Fable 5 leaves your Claude plan'}
       </p>
+      {!remaining.expired && (
+        <p className="countdown-hours">
+          = <strong>{totalHoursLeft(DEADLINE, now)}</strong> hours left to use it
+        </p>
+      )}
     </section>
   )
 }

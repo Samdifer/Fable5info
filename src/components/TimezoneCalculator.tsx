@@ -7,7 +7,7 @@ export default function TimezoneCalculator() {
   const [zone, setZone] = useState(detected)
 
   return (
-    <section className="card">
+    <section className="card card-centered">
       <h2>When does it end for you?</h2>
       <p className="tz-result">
         In <strong>{zone.replace(/_/g, ' ')}</strong>, Fable 5 stops being included at
@@ -15,7 +15,7 @@ export default function TimezoneCalculator() {
         <span className="tz-time">{formatDeadlineIn(zone)}</span>
       </p>
       <label className="tz-label">
-        Check another timezone{' '}
+        Check another timezone
         <select value={zone} onChange={(e) => setZone(e.target.value)}>
           {zones.map((z) => (
             <option key={z} value={z}>
@@ -30,8 +30,8 @@ export default function TimezoneCalculator() {
         </button>
       )}
       <p className="disclaimer">
-        Anthropic has only announced the <em>date</em> — July 12, 2026. This site assumes the
-        cutoff lands at 11:59:59&nbsp;PM Mountain Time; the exact hour could differ.
+        Cutoff: July 12, 2026 at 11:59:59 PM Pacific Time — San Francisco, Anthropic&rsquo;s
+        home timezone.
       </p>
     </section>
   )

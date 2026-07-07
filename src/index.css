@@ -32,11 +32,13 @@ body {
 }
 
 main {
-  max-width: 640px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 4rem 1.25rem 3rem;
+  padding: 5rem 1.25rem 3rem;
   text-align: center;
 }
+
+/* ---- chrome ---- */
 
 .theme-toggle {
   position: fixed;
@@ -50,22 +52,26 @@ main {
   padding: 0.25rem 0.5rem;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
   color: var(--fg);
 }
+
+/* ---- hero ---- */
 
 .countdown-title {
   color: var(--accent);
   font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
   margin: 0;
 }
 
 .countdown-time {
-  font-size: clamp(2.5rem, 11vw, 5.5rem);
+  font-size: clamp(2.6rem, 11vw, 5.25rem);
   font-weight: 800;
-  margin: 0.5rem 0 0;
+  line-height: 1.1;
+  margin: 0.75rem 0 0;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
 }
@@ -77,15 +83,30 @@ main {
 .countdown-sub {
   color: var(--dim);
   font-size: 0.85rem;
-  margin: 0.25rem 0 0;
+  margin: 0.35rem 0 0;
 }
+
+.countdown-hours {
+  color: var(--dim);
+  font-size: 0.85rem;
+  margin: 1.4rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-hours strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+/* ---- quote ---- */
 
 .quote {
   color: var(--dim);
-  font-size: 0.95rem;
-  min-height: 3.2em;
-  margin: 2rem auto;
-  max-width: 30rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  min-height: 3em;
+  margin: 2.75rem auto 3rem;
+  max-width: 28rem;
   opacity: 1;
   transition: opacity 0.35s;
 }
@@ -94,87 +115,140 @@ main {
   opacity: 0;
 }
 
+/* ---- cards ---- */
+
 .card {
   border: 1px solid var(--border);
   background: var(--card);
   border-radius: 14px;
-  padding: 1.5rem 1.5rem 1.25rem;
-  margin: 1.5rem 0;
+  padding: 1.75rem;
+  margin: 0 0 1.25rem;
   text-align: left;
 }
 
+.card-centered {
+  text-align: center;
+}
+
 .card h2 {
-  margin: 0 0 0.75rem;
-  font-size: 1.05rem;
-  color: var(--accent);
+  color: var(--dim);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin: 0 0 1.1rem;
 }
 
 .card p {
-  font-size: 0.9rem;
-  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  margin: 0 0 0.85rem;
 }
 
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- timezone calculator ---- */
+
 .tz-result {
-  text-align: center;
+  margin-bottom: 1.1rem;
 }
 
 .tz-time {
   display: inline-block;
-  margin-top: 0.35rem;
-  font-size: 1.15rem;
+  margin-top: 0.4rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--accent);
 }
 
 .tz-label {
   display: block;
-  text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--dim);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .tz-label select {
+  display: block;
+  margin: 0.45rem auto 0;
   font: inherit;
+  font-size: 0.85rem;
   color: var(--fg);
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.35rem 0.6rem;
   max-width: 100%;
-  margin-top: 0.35rem;
 }
 
 .tz-reset {
-  display: block;
-  margin: 0 auto 0.5rem;
   background: none;
   border: none;
-  color: var(--accent);
+  color: var(--dim);
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   cursor: pointer;
   text-decoration: underline;
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+
+.tz-reset:hover {
+  color: var(--fg);
 }
 
 .disclaimer {
   color: var(--dim);
-  font-size: 0.75rem;
-  margin-top: 1rem;
-  text-align: center;
+  font-size: 0.74rem;
+  margin: 1.1rem 0 0;
 }
 
+/* ---- sources ---- */
+
 .sources {
-  color: var(--dim);
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0.9rem 0 0;
+  border-top: 1px solid var(--border);
   font-size: 0.78rem;
 }
 
-a {
-  color: var(--accent);
+.sources li {
+  margin: 0.25rem 0;
 }
+
+.sources li::before {
+  content: '→ ';
+  color: var(--dim);
+}
+
+/* ---- links ---- */
+
+a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--dim);
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* ---- footer ---- */
 
 footer {
   color: var(--dim);
-  font-size: 0.75rem;
-  margin-top: 2.5rem;
+  font-size: 0.74rem;
+  margin-top: 2.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote,
+  body {
+    transition: none;
+  }
 }

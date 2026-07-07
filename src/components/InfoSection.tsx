@@ -9,43 +9,39 @@ export default function InfoSection() {
         Anthropic extended it by five days, to <strong>July 12, 2026</strong>.
       </p>
       <p>
-        After the cutoff, Fable 5 doesn&rsquo;t disappear — it moves to metered{' '}
-        <a
-          href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
-          target="_blank"
-          rel="noreferrer"
-        >
-          usage credits
-        </a>{' '}
-        at $10 / $50 per million input / output tokens. Anthropic says it will return to
+        After the cutoff, Fable 5 doesn&rsquo;t disappear — it moves to metered usage credits at
+        $10 / $50 per million input / output tokens. Anthropic says it will return to
         subscription plans once capacity allows.
       </p>
-      <p className="sources">
-        Sources:{' '}
-        <a
-          href="https://thenewstack.io/anthropic-extends-fable-5/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          The New Stack (Jul 7: extension to July 12)
-        </a>
-        {' · '}
-        <a
-          href="https://www.anthropic.com/news/redeploying-fable-5"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Anthropic: Redeploying Fable 5
-        </a>
-        {' · '}
-        <a
-          href="https://www.anthropic.com/news/claude-fable-5-mythos-5"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Anthropic: Claude Fable 5 and Mythos 5
-        </a>
-      </p>
+      <ul className="sources">
+        <li>
+          <a
+            href="https://thenewstack.io/anthropic-extends-fable-5/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            The New Stack — extension to July 12
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.anthropic.com/news/redeploying-fable-5"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Anthropic — Redeploying Fable 5
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Anthropic — usage credits for paid plans
+          </a>
+        </li>
+      </ul>
     </section>
   )
 }

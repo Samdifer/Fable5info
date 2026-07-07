@@ -1,6 +1,6 @@
-// = July 12, 2026 11:59:59 PM America/Denver (MDT, UTC-6). Anthropic announced the
-// July 12 date only; the hour is this site's stated Mountain Time assumption.
-export const DEADLINE = new Date('2026-07-13T05:59:59Z')
+// = July 12, 2026 11:59:59 PM America/Los_Angeles (PDT, UTC-7) — the cutoff is
+// anchored to Pacific Time in San Francisco, Anthropic's home timezone.
+export const DEADLINE = new Date('2026-07-13T06:59:59Z')
 
 export interface Remaining {
   days: number
@@ -27,6 +27,11 @@ const pad = (n: number) => String(n).padStart(2, '0')
 
 export function formatRemaining(r: Remaining): string {
   return `${r.days}d ${pad(r.hours)}:${pad(r.minutes)}:${pad(r.seconds)}`
+}
+
+export function totalHoursLeft(deadline: Date, now: Date): string {
+  const ms = Math.max(0, deadline.getTime() - now.getTime())
+  return (ms / 3_600_000).toFixed(1)
 }
 
 export function formatDeadlineIn(zone: string): string {

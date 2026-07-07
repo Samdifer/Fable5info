@@ -14,12 +14,13 @@ Hosted on Vercel at fable5.info (GitHub: Samdifer/Fable5info).
 Anthropic extended the cutoff from July 7 to **July 12, 2026** (reported by The New Stack,
 Jul 7 2026). No official cutoff *hour* is published. Per Sam's decision the site anchors to:
 
-- **July 12, 2026 11:59:59 PM Mountain Time (America/Denver, MDT)**
-- Canonical constant: `DEADLINE = new Date('2026-07-13T05:59:59Z')`
+- **July 12, 2026 11:59:59 PM Pacific Time (America/Los_Angeles, PDT)** — San Francisco,
+  Anthropic's home timezone (amended by Sam on 2026-07-07; originally Mountain Time)
+- Canonical constant: `DEADLINE = new Date('2026-07-13T06:59:59Z')`
 
-All countdown and timezone-calculator output derives from this one UTC instant. The site
-displays a disclaimer that the exact hour is an assumption (Mountain Time) since Anthropic
-only announced the date.
+All countdown and timezone-calculator output derives from this one UTC instant. The hero
+also shows total hours remaining ("= 131.4 hours left to use it"), added in the same
+amendment.
 
 ## Stack
 
