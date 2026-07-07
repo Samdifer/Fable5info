@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { DEADLINE, formatRemaining, remainingUntil } from '../lib/deadline'
 
-export function useNow(): Date {
+function useNow(): Date {
   const [now, setNow] = useState(() => new Date())
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000)
